@@ -1,0 +1,71 @@
+<?php
+
+namespace App\Http\Livewire;
+use App\Models\User;
+use App\Models\Sale;
+use Carbon\Carbon;
+
+use Livewire\Component;
+
+class Cashout extends Component
+{
+
+    public $fromDate, $toDate, $userid, $total, $items, $sales,$salesDetails;
+
+
+
+    public function mount()
+    
+    {
+        $this->fromDate = null;
+        $this->toDate = null;
+        $this->userid = 0;
+        $this->total = 0;
+        $this->sales= [];
+        $this->details =[];
+    }
+
+
+    public function render()
+    {
+        return view('livewire.cashout.cashout',[
+            'users' => User::orderBy('name', 'asc')->get()
+
+        ])->extends('layouts.theme.app')->section('content');
+    }
+
+    public function Consultar ()
+    {
+        $fi=Carbon::parse($this->fromDate)->format('Y-m-d') . '00:00:00';
+        $ff=Carbon::parse($this->toDate)->format('Y-m-d') . '23:59:59';
+
+            $this->sales = Sale::whereBetween('created_at', [$fi,$ff])
+            ->where('status', 'Paid')
+            ->where('user_id', $this->userid)
+            ->get();
+
+
+                $this->total = $this->sales ? $this->sales->sum('total') : 0;
+                $this->total = $this->sales ? $this->sales->sum('items') : 0;
+
+    }
+
+    public function viewDetails(Sale $sale)
+    {
+        $fi=Carbon::parse($this->fromDate)->format('Y-m-d') . '00:00:00';
+        $ff=Carbon::parse($this->toDate)->format('Y-m-d') . '23:59:59';
+
+
+        $this->details = Sale::join('sale_details as d','d.sale_id', 'sale.id')
+        ->join('products as p', 'p.id', 'd.product_id')
+        ->select('d.sale.id', 'p.name as product', 'd.quantity', 'd.price')
+        ->whereBetween('sales.created_at', [$fi, $ff])
+        ->where('sales.status', 'Paid')
+        ->where('sales.user_id', $this->userid)
+        ->where('sales.id', $sale->id)
+        ->get();
+
+
+        $this->emit('show-modal', 'open-modal');
+    }
+}
