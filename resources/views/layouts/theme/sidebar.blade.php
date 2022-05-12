@@ -3,6 +3,7 @@
     <div id="compact_submenuSidebar" class="submenu-sidebar"></div>
     <nav id="compactSidebar">
         <ul class="menu-categories">
+            
             <li class="active">
                 <a href="{{ url('categories') }}" data-active="true" class="menu-toggle">
                     <div class="base-menu">
@@ -20,6 +21,7 @@
                     </div>
                 </a>
             </li>
+            
 
             <li class="" >
                 <a href="{{ url('products') }}" data-active="false" class="menu-toggle">
@@ -55,7 +57,7 @@
                     </div>
                 </a>
             </li>
-
+<!--   -->
             <li>
                 <a href="{{url('roles')}}" data-active="false" class="menu-toggle">
                     <div class="base-menu">
@@ -72,6 +74,7 @@
                     </div>
                 </a>
             </li>
+            <!--   
 
             <li>
                 <a href="{{url('permisos')}}" data-active="false" class="menu-toggle">
@@ -87,8 +90,8 @@
                         <span>PERMISOS</span>
                     </div>
                 </a>
-            </li>
-
+            </li>-->
+<!--  
             <li>
                 <a href="{{url('asignar')}}" data-active="false" class="menu-toggle">
                     <div class="base-menu">
@@ -104,7 +107,7 @@
                     </div>
                 </a>
             </li>
-
+ -->
             <li>
                 <a href="{{url('users')}}" data-active="false" class="menu-toggle">
                     <div class="base-menu">

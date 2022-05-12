@@ -83,7 +83,7 @@ $this->emit('show-modal', 'open!');
 }
 
 protected $listeners =[
-    'deleteRow' => 'destroy',
+    'deleteRow' => 'Destroy',
     'resetUI'=> 'resetUI'
 
 ];
@@ -195,14 +195,6 @@ protected $listeners =[
             $user->image =$customFileName;
             $user->save();
 
-            if($imageTemp !=null)
-            {
-
-                if(file_exists('storage/users/' . $imageTemp)){
-                    unlink('storage/users/' . $imageTemp);
-                }
-
-            }
    
         }
         $this->resetUI();

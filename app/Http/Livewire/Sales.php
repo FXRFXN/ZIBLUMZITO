@@ -16,11 +16,11 @@ class Sales extends Component
 
 {
 
-
+//variables
 
     public $total,$itemsQuantity, $efectivo, $change;
 
-
+/*atraves de este metodo definimos los valores que tendran las variables definidas anteriormente */
     public function mount()
     {
          $this->efectivo = 0;
@@ -29,6 +29,9 @@ class Sales extends Component
          $this->itemsQuantity =Cart::getTotalQuantity();
 
     }
+    /*función de las condiciones de la paginación. através del if condición y se evalua si una condicion es verdadera 
+o falsa si la paginación es mayor a 5 entonces se agrega una segunda lista, si no se cumple esta condición entonces evalua 
+los datos de la categoria y no crea una nueva paginacion*/
     public function render()
     {
         return view('livewire.sales.sales',[
@@ -41,7 +44,9 @@ class Sales extends Component
     }
 
 
-
+/*Esta funcion permite obtener el cambio a dar, se llama a la variable efectivo que servira para obtener el valor de la
+compra, el 2do this llama a la  variable cami¿bio y se ejecuta una operacion matematica, se resta el efectivo del total
+*/
     public function ACash($value){
         $this->efectivo += ($value  == 0 ? $this->total : $value);
         $this->change = ($this->efectivo - $this->total);
@@ -56,6 +61,9 @@ class Sales extends Component
         'saveSale' => 'saveSale'
 
     ];
+
+    /*Metodo encargado de capturar el codigo de barras , atraves de este
+    se definen varias variables y varias eventos que posteriormente los scripts evaluaran*/
 public function scanCode($barcode, $cant = 1)
 {
 
@@ -198,13 +206,14 @@ public function clearCart()
     $this->change = 0;
 
     $this->total = Cart::getTotal();
-    $this->itemsQuantity =  Cart::getTotalQuantity();
+    $this->itemsQuantity =Cart::getTotalQuantity();
     $this->emit('scan-ok','Carrito vacio');
 
 
 
 }
-
+/*Este es el metodo de guardar la venta atraves de este se guarda la informacion 
+de la venta realizada*/
 public function saveSale()
 {
     if($this->total <=0)
@@ -282,12 +291,6 @@ public function saveSale()
 
 
 
-public function printTicket($sale)
-{
-return Redirect::to("print://$sale->id");
-
-
-}
 
 
 

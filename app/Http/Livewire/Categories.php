@@ -93,7 +93,7 @@ return recibe la llamada edit y retorna los scripts que estan definidos en el .b
                'name' => $this->name
            ]);
 
-         //imagen 
+         //Añadir una imagen imagen 
          $customFileName;
          if($this->image)
          {

@@ -88,16 +88,16 @@
         
       window.livewire.on('show-modal', msg =>{
           $('#theModal').modal('show')
-      });
+      })
      
       window.livewire.on('category-added', msg =>{
           $('#theModal').modal('hide')
-      });  
+      })
       window.livewire.on('category-updated ', msg =>{
           $('#theModal').modal('hide')
-      });  
+      })
 
-    });
+    })
 
     function Confirm(id, products)
    

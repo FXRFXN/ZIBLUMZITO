@@ -1,4 +1,4 @@
-<div> 
+
 <div class="row nt-9">
 <div class="col-sn-12">
 <div class="connect-sorting">
@@ -27,14 +27,13 @@
 
 </span>
 </div>
+
 <input type="number"  id="cash " wire:model="efectivo" wire.keydown.enter="saveSale" class="form.control text-center"
 value="{{$efectivo}}">
 
 <div class="input-group-append">
 <span wire:click="$set('efectivo', 0)" class="input-group-text" style="
-background: #383F5C; color:white">EFECTIVO
-<i class="fas fa-backspace fa-2x"></i>
-</span>
+background: #383F5C; color:white">EFECTIVO</span>
 </div>
 </div>
 
@@ -47,7 +46,7 @@ background: #383F5C; color:white">EFECTIVO
 @if($total > 0)
 <button onclick= "Confirm('','clearCart','¿SEGURO DE ELIMINAR EL CARRITO?')"
 class="btn btn-dark mtmobile">
-CANCELAR F4
+CANCELAR 
 </button>
 @endif
 </div>
@@ -55,7 +54,7 @@ CANCELAR F4
 <div class="col-sm-12 col-md-12 col-lg-6">
 @if($efectivo>=$total && $total > 0)
 <button wire:click.prevent="saveSale" class="btn btn-dark btn-md btn-block">
-GUARDAR F9</button>
+GUARDAR </button>
 @endif
 </div>
 </div>

@@ -12,7 +12,7 @@
 <input type="hidden" id="hiddenTotal" value="{{$total}}">
 </div>
 <div>
-<h4 class="mt-3">Articulos: {{$itemsQuantity}}</h4>
+<h4 class="mt-3">Articulos:{{$itemsQuantity}}</h4>
 </div>
 </div>
 </div>

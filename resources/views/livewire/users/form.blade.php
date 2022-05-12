@@ -63,9 +63,6 @@
         </div>
     </div>
 
-
-
-
     <div class="col-sm-12 col-md-6">
         <div class="form-group">
         <label >Imagen de perfil</label>

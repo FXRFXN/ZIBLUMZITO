@@ -23,12 +23,12 @@
 
 <div class="table-responsive">
 <table class="table table-bordered table striped mt-1">
-<thead class="text-white" style="background: #3b3f53C">
+<thead class="text-white" style="background: #3B3F5C">
 <tr>
-    <th class="table-th text-black">TIPO</th>
-    <th class="table-th text-black">VALOR</th>
-    <th class="table-th text-black">IMAGEN</th>
-    <th class="table-th text-black">ACTION</th>
+    <th class="table-th text-white">TIPO</th>
+    <th class="table-th text-white">VALOR</th>
+    <th class="table-th text-white">IMAGEN</th>
+    <th class="table-th text-white">ACTION</th>
 </tr>
 </thead>
 <tbody>

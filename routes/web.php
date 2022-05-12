@@ -26,24 +26,34 @@ use App\Http\Controllers\ExportController;
 */
 
 Route::get('/', function () {
-    return view('');
+    return view('welcome');
 });
+Auth::routes();
+  
 
+    
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('login');
 
-Auth::routes();
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+  Route::middleware(['auth'])->group(function (){
 Route::get('categories', Categories::class);
 Route::get('products', Products::class);
 Route::get('coins', Coins::class);
+
+
 Route::get('sales', Sales::class);
 Route::get('roles', Roles::class);
 Route::get('permisos', Permisos::class);
 Route::get('asignar', Asignar::class);
+  
+
 Route::get('users', Users::class);
 Route::get('cashout', Cashout::class);
 Route::get('reports', Reports::class);
+
+});
 
 Route::get('report/pdf/{user}/{type}/{f1}/{f2}',[ExportController::class,'reportPDF']);
 Route::get('report/pdf/{user}/{type}',[ExportController::class,'reportPDF']);

@@ -39,20 +39,13 @@
                    <h6>{{$role->name}}</h6>
                 </td>
         
-                <td class="text-center">
-                    <a href="javascript:void(0)" 
-                    button type="button"
-                    wire:click="Edit({{$role->id}})"
-                    class="btn btn-dark mtmobile" title="Editar registro">
-                   EDITAR</button>
-                    </a>
-        
+<td>
                     <a href="javascript:void(0)" 
                     button type="button"onclick="Confirm('{{$role->id}}')"  
                     class="btn btn-dark" title="Eliminar registro">
                      ELIMINAR</button>
                     </a>
-        
+        </td>
         
                 </td> 
             </tr>

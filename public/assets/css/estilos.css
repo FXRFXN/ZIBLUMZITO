@@ -1,0 +1,56 @@
+.jumbotronEncabezado{
+    background-color:#cc0e74;
+    border-radius: 0%;
+margin-bottom: 0%;
+
+}
+.textoEncabezado{
+    color: #d8e3e7
+}
+.jumbotronFooter{
+    background-color:#1687a7
+}
+
+
+.perfil-img{
+    width: 18em;
+    height: 20em;
+}
+.img-carrusel{
+    width: 50em;
+    height: 40em;
+}
+.header {
+    color: #36A0FF;
+    font-size: 27px;
+    padding: 10px;
+}
+
+.bigicon {
+    font-size: 35px;
+    color: #36A0FF;
+}
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-image: url(niñofondo.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+
+}
+body::before {
+    content: " ";
+    width: 100%;
+    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background: linear-gradient ( 45deg, #52c4df, #ad55 );
+opacity: 1;
+z-index: -1;
+
+}
