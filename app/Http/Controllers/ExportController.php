@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade as PDF;
 use Meatwebsite\Excel\Facades\Excel;
 
+
 class ExportController extends Controller
 {
     public function reportPDF($userId, $reportType, $dateFrom = null, $dateTo = null)
@@ -20,8 +21,8 @@ class ExportController extends Controller
             $from =Carbon::parse(Carbon::now())->format('Y-m-d'). ' 00:00:00';
             $to =Carbon::parse(Carbon::now())->format('Y-m-d'). ' 23:59:59';
         }else{
-            $from =Carbon::parse(dateFrom())->format('Y-m-d'). ' 0:00:00';
-            $to =Carbon::parse(dateTo())->format('Y-m-d'). ' 23:59:59';
+            $from =Carbon::parse($dateFrom)->format('Y-m-d'). ' 0:00:00';
+            $to =Carbon::parse($dateTo)->format('Y-m-d'). ' 23:59:59';
         }
 
 

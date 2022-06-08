@@ -30,8 +30,8 @@
     <th class="table-th text-white">CODIGO DE BARRAS</th>
     <th class="table-th text-white">CATEGORIA</th>
     <th class="table-th text-white">PRECIO</th>
-    <!-- <th class="table-th text-white">STOCK</th>-->
-   <!-- <th class="table-th text-white">INV.MIN</th> -->
+    <th class="table-th text-white">STOCK</th>
+   <th class="table-th text-white">INV.MIN</th> 
  
     <th class="table-th text-white">ACCIONES</th>
 </tr>
@@ -45,17 +45,9 @@
            <td> <h6>{{$product->barcode}}</h6></td>
            <td> <h6>{{$product->category}}</h6></td>
            <td> <h6>{{$product->price}}</h6></td>
-          <!--  <td> <h6>{{$product->stock}}</h6></td>-->
-           <!-- td> <h6>//{{$product->alerts}}</h6></>-->
-         
-
-
-
-
-
-
-         
-
+            <td> <h6>{{$product->stock}}</h6></td>
+           <td> <h6>{{$product->alerts}}</h6></td>
+        
         <td class="text-center">
           
             <a href="javascript:void(0)" 

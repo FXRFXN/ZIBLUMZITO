@@ -97,6 +97,12 @@
                                         </h6>
                                          </td>
 
+                                         <td class="text-center" width="50px">
+                                         <button wire:click.prevent="getDetails({{$d->id}})" 
+                                            class="btn btn-dark btn-sm">
+                                             <i class="Detalles"></i>
+                                        </td>
+
                                         
 
 
@@ -117,8 +123,9 @@
             </div>
         </div>
     </div>
-    @include('livewire.reports.sales-details')
+    @include('livewire.reports.sales-detail')
 
+</div>
 </div>
 </div>
 <script>

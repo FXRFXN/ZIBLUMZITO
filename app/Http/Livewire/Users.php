@@ -94,7 +94,7 @@ protected $listeners =[
             'name' =>'required|min:3',
             'email'=>'required|unique:users|email',
             'status'=>'required|not_in:Elegir',
-            'profile'=>'required|not_in:Elegir',
+         
             'password'=>'required|min:3'
 
         ];
@@ -108,8 +108,7 @@ protected $listeners =[
             'email.unique'=>'El email ya existe en el sistemas',
             'status.required'=>'Selecciona un estado de usuario',
             'status.not_in'=>'Selecciona el estado',
-            'profile.required'=>'Selecciona el perfil/rol del usuario',
-            'profile.not_in'=>'Selecciona un perfil deistinto',
+        
             'password.required'=>'Ingresa la contraseña',
             'password.min'=>'La contraseña debe tener almenos 3 caracteres',
             
@@ -121,7 +120,7 @@ protected $listeners =[
             'email'=>$this->email,
             'phone'=>$this->phone,
             'status'=>$this->status,
-            'profile'=>$this->profile,
+           
             'password'=>bcrypt($this->password)
 
            

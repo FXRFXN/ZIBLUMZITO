@@ -22,13 +22,15 @@ class Roles extends Component
             return'vendor.livewire.bootstrap';
     }
 
-
+/*atraves de este metodo se añaden los nombres que reciben las paginas de cada apartado*/
     public function mount()
     {
         $this->pageTitle = 'Listado';
         $this->componentName= 'Roles';
     }
-
+    /*función de las condiciones de la paginación. através del if condición y se evalua si una condicion es verdadera 
+o falsa si la paginación es mayor a 5 entonces se agrega una segunda lista, si no se cumple esta condición entonces evalua 
+los datos de la categoria y no crea una nueva paginacion*/
     public function render()
     {
 
@@ -46,12 +48,12 @@ class Roles extends Component
         ->section('content');
     }
 
-
+/*Metodo que permite la creacion de un nuevo rol*/
     public function CreateRole()
     {
-        //reglas
+        //las reglas se definen pora que el usuario llene los campos correctament
     $rules = ['roleName'=> 'required|min:2|unique:roles,name'];
-    //mensajes
+    //mensajes: estas son las alertas que los usuarios veran al no llenar un campo o repetirlo
     
       $messages = [
           'roleName.required' =>'El nombre del rol es requerido',
@@ -106,7 +108,7 @@ $this->resetUI();
 }
 
 protected $listeners = ['destroy' => 'Destroy'];
-
+/*Metodo que permite eliminar al usuario registrado anteriormente */
 public function Destroy($id)
 {
     $permissionsCount = Role::find($id)->permissions->count();

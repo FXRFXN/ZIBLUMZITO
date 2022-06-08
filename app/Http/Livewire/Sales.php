@@ -52,6 +52,11 @@ compra, el 2do this llama a la  variable cami¿bio y se ejecuta una operacion ma
         $this->change = ($this->efectivo - $this->total);
 
     }
+    public function updatedEfectivo($value)
+    {
+        $efectivoZero = ($value === '' ? 0 : $value);
+        $this->change = ($efectivoZero - $this->total);
+    }
 
     protected $listeners =[
         
@@ -64,11 +69,11 @@ compra, el 2do this llama a la  variable cami¿bio y se ejecuta una operacion ma
 
     /*Metodo encargado de capturar el codigo de barras , atraves de este
     se definen varias variables y varias eventos que posteriormente los scripts evaluaran*/
-public function scanCode($barcode, $cant = 1)
+public function scanCode($name, $cant = 1)
 {
 
-$product = Product::where('barcode',$barcode)->first();
-if($product == null || empty($empty))
+$product = Product::where('name',$name)->first();
+if($product == null || empty($product))
 {
     $this->emit('scan-notfun', 'El producto no esta registrado');
 }else

@@ -57,7 +57,7 @@
                     </div>
                 </a>
             </li>
-<!--   -->
+<!--   
             <li>
                 <a href="{{url('roles')}}" data-active="false" class="menu-toggle">
                     <div class="base-menu">
@@ -73,7 +73,7 @@
                         <span>ROLES</span>
                     </div>
                 </a>
-            </li>
+            </li>-->
             <!--   
 
             <li>
@@ -140,7 +140,7 @@
                     </div>
                 </a>
             </li>
-<!-- 
+ 
             <li>
                 <a href="{{url('cashout')}}" data-active="false" class="menu-toggle">
                     <div class="base-menu">
@@ -152,11 +152,11 @@
                                 <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
                             </svg>
                         </div>
-                        <span>ARQUEOS</span>
+                        <span>CORTE DE CAJA</span>
                     </div>
                 </a>
             </li>
-            -->
+            
 
             <li>
                 <a href="{{url('reports')}}" data-active="false" class="menu-toggle">

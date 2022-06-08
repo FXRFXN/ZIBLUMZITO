@@ -1,24 +1,17 @@
 <?php
 
 namespace App\Http\Livewire;
-
 use Carbon\Carbon;
 use App\Models\Sale;
 use App\Models\User;
 use Livewire\Component;
-
 use App\Models\SaleDetails;
-
-
-
 
 class Reports extends Component
 {
 
 
     public $componentName, $data, $details, $sumDetails, $countDetails, $reportType, $userId, $dateFrom, $dateTo, $saleId; 
-
-
 
     public function mount()
     {
@@ -43,8 +36,6 @@ class Reports extends Component
         ])->extends('layouts.theme.app')
         ->section('content');
     }
-
-
     public function SalesByDate()
     {
 
@@ -78,17 +69,17 @@ class Reports extends Component
 
         }
     }
-
-
     public function getDetails($saleId)
     {
-        $this->details = SaleDetails::join('products as p', 'p.id', 'sale_details.product_id')
-        ->select('sale_details.id', 'sale_details.price', 'sale_details.quantity', 'p.name as product')
-        ->where('sale_details.sale_id', $saleId)
+    
+       
+        $this->details = SaleDetails::join('products as p','p.id','sale_details.product_id')
+        ->select('sale_details.id','sale_details.price','sale_details.quantity','p.name as product')
+        ->where('sale_details.sale_id',$saleId)
         ->get();
+         
 
-
-
+ 
         $suma = $this->details->sum(function ($item){
             return $item->price * $item->quantity;
 
@@ -100,6 +91,6 @@ class Reports extends Component
 
         $this->emit('show-modal', 'details loaded');
     }
-
-
+    
+    
 }
